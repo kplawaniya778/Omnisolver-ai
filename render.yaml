@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: omnisolver-backend
+    env: node
+    plan: free
+    buildCommand: wasp build
+    startCommand: node .wasp/build/server.js
+    repo: https://github.com/kplawaniya778/Omnisolver-ai
+    branch: main
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://postgres:xtSztFOWeXileYDankcycSyALvARUxPU@yamabiko.proxy.rlwy.net:5432/railway
+      - key: JWT_SECRET
+        value: your_random_32_char_secret
+      - key: WASP_WEB_CLIENT_URL
+        value: https://omnisolver-ai.vercel.app
+      - key: WASP_SERVER_URL
+        value: https://omnisolver-backend.onrender.com
